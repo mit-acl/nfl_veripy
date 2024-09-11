@@ -37,6 +37,7 @@ test_closed_loop:
     - docker pull $CONTAINER_TEST_IMAGE
     - docker run -v /builds/neu-autonomy/certifiable-learning/nfl_veripy:/home/nfl_veripy $CONTAINER_TEST_IMAGE python tests/test.py
 
+
 # release-image:
 #   stage: release
 #   script:
