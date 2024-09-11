@@ -91,7 +91,9 @@ def load_controller(
     if system != "Taxinet":
         with open(path + "/model.json", "r") as f:
             loaded_model_json = f.read()
-        model = model_from_json(loaded_model_json)
+        model = model_from_json(
+            loaded_model_json, custom_objects={"Sequential": Sequential}
+        )
         model.load_weights(path + "/model.h5")
     else:
         model = load_model(path + "/model.h5")
