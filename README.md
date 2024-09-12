@@ -89,7 +89,7 @@ git clone --recursive <this_repo>
 
 You *might* need to install these dependencies on Linux (for `cvxpy`'s SCS solver and to generate reasonably sized animation files) (did not need to on OSX):
 ```bash
-sudo apt-get install libblas-dev liblapack-dev gifsicle
+sudo apt-get install libblas-dev liblapack-dev gifsicle libgmp3-dev
 ```
 
 On M2 Macbook, I also needed to set up gmp for pycddlib:
