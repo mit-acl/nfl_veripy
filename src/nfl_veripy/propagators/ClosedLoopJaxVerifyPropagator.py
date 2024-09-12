@@ -1,4 +1,5 @@
 """Compute reachable set of neural feedback loop in Jax."""
+
 import functools
 from typing import Callable, Optional
 
@@ -55,8 +56,8 @@ class ClosedLoopJaxPropagator(ClosedLoopPropagator):
                         "Don't support >1 types of activations in model."
                     )
             elif isinstance(m, torch.nn.Linear):
-                w = m.weight.data.numpy().T
-                b = m.bias.data.numpy()
+                w = jnp.array(m.weight.data.numpy().T)
+                b = jnp.array(m.bias.data.numpy())
                 params.append((w, b))
             else:
                 raise ValueError("That layer isn't supported.")

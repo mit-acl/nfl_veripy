@@ -92,6 +92,13 @@ You *might* need to install these dependencies on Linux (for `cvxpy`'s SCS solve
 sudo apt-get install libblas-dev liblapack-dev gifsicle
 ```
 
+On M2 Macbook, I also needed to set up gmp for pycddlib:
+```bash
+brew install gmp
+# Add this line to ~/.zshrc (without the #) so python knows where to find gmp:
+# export "CFLAGS=-I/usr/local/include -L/usr/local/lib"
+```
+
 Create a `virtualenv` for this repo:
 ```bash
 python -m virtualenv venv
